@@ -4,7 +4,7 @@
 | :----------------------------------------------------------: | :--------------------------------------: |
 | [player_fakelag](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/player_fakelag) | Player Fakelag / 玩家延迟控制 / 平衡延迟 |
 | [aim_monitor](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/aim_monitor) |          Aim Monitor / 瞄准监控          |
-| [admin_hp_spawn](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/admin_hp_spawn) |  Admin HP & Spawn / 管理员生命值与重生   |
+| [admin_menu](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/admin_menu) |        Admin Menu / 管理员小菜单         |
 | [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
 
 ## Plugins / 插件列表
@@ -44,19 +44,18 @@ Features / 功能:
 * sm_unmonitor `<player>` -  停止监控玩家
 * sm_unmt `<player>` -  unmonitor命令的简写
 
-### 3. Admin HP & Spawn / 管理员生命值与重生
+### 3. Admin Menu / 管理员小菜单
 
 就是权限🐕用的,idk
 
 Features / 功能:
 
-* 恢复单个或者全体血量,复活寄了的玩家在你准心处,并且集成在admin菜单里
+* 传送回血复活,以后有需要会添加更多
 
 #### Commands / 命令:
 
 * sm_hp - 恢复所有生还者生命值
-* sm_givehp [player] - 恢复指定玩家生命值
-* sm_respawn [player] - 重生指定玩家
+* 其他打开你的admin菜单就有咧
 
 ### 4. l4dffannounce / 友伤提示
 
