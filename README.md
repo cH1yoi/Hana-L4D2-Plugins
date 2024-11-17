@@ -6,6 +6,7 @@
 | [aim_monitor](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/aim_monitor) |          Aim Monitor / 瞄准监控          |
 | [admin_menu](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/admin_menu) |        Admin Menu / 管理员小菜单         |
 | [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
+| [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |     sourcetvsupport / 服务器录制demo     |
 
 ## Plugins / 插件列表
 
@@ -68,3 +69,19 @@ Features / 功能:
 #### Commands / 命令:
 
 * ConVar :  l4d_ff_announce_enable 0/1		开启关闭
+
+### 5. sourcetvsupport / 服务器demo录制 - [shqke](https://github.com/shqke/sourcetvsupport)
+
+服务器自动录制demo,除了看不见手臂外其他都比较OK
+
+自动录制插件改动较大，并且仅针对于使用readyup的对抗服务器 原插件 - [shqke](https://github.com/shqke/sp_public/tree/master/autorecorder)
+
+Features / 功能:
+
+* 在开始时自动录制demo,该demo可以查看所有人视角,等于你在旁观
+* 提供人性化的php下载页和自动处理脚本但是需要大量改动适配自己服务器
+* 非常吃性能,性能不够的服务器不建议采用
+
+#### Commands / 命令:
+
+* ConVar :  sm_recordstatus		查看sourcetv状态
