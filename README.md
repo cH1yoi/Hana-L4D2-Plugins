@@ -4,7 +4,7 @@
 | :----------------------------------------------------------: | :--------------------------------------: |
 | [player_fakelag](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/player_fakelag) | Player Fakelag / 玩家延迟控制 / 平衡延迟 |
 | [aim_monitor](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/aim_monitor) |          Aim Monitor / 瞄准监控          |
-| [admin_menu](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/admin_menu) |        Admin Menu / 管理员小菜单         |
+| [hide_server](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/hide_server) |         Hide Server / 隐藏服务器         |
 | [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
 | [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |     sourcetvsupport / 服务器录制demo     |
 
