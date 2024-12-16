@@ -7,6 +7,7 @@
 | [hide_server](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/hide_server) |         Hide Server / 隐藏服务器         |
 | [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
 | [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |     sourcetvsupport / 服务器录制demo     |
+| [l4d2_many_pinned_prompt](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_many_pinned_prompt) |  l4d2_many_pinned_prompt / 特感多控提示  |
 
 ## Plugins / 插件列表
 
@@ -84,4 +85,14 @@ Features / 功能:
 
 #### Commands / 命令:
 
-* ConVar :  sm_recordstatus		查看sourcetv状态
+* sm_recordstatus		查看sourcetv状态
+
+### 6. l4d2_many_pinned_prompt / 特感多控提示
+
+Features / 功能:
+
+* 来自特感阵营的多控操作提示
+
+#### Commands / 命令:
+
+* 无
