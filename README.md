@@ -8,6 +8,7 @@
 | [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
 | [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |     sourcetvsupport / 服务器录制demo     |
 | [l4d2_many_pinned_prompt](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_many_pinned_prompt) |  l4d2_many_pinned_prompt / 特感多控提示  |
+| [l4d_superversus](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d_superversus) |     l4d_superversus / 对抗多v多用的      |
 
 ## Plugins / 插件列表
 
@@ -92,6 +93,16 @@ Features / 功能:
 Features / 功能:
 
 * 来自特感阵营的多控操作提示
+
+#### Commands / 命令:
+
+* 无
+
+### 7. l4d_superversus / 多v多
+
+Features / 功能:
+
+* 对抗多v多，并且支持多克生成
 
 #### Commands / 命令:
 
