@@ -41,7 +41,6 @@ Handle g_hForwardOnQueueChanged;
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
 {
-    // 注册插件库名称 / Register plugin library name
     RegPluginLibrary("l4d_tank_control_eq");
 
     CreateNative("GetTankSelection", Native_GetTankSelection);
@@ -104,7 +103,6 @@ public void OnPluginStart()
     RegConsoleCmd("sm_tank", Tank_Cmd, "Shows who is becoming the tank.");
     RegConsoleCmd("sm_boss", Tank_Cmd, "Shows who is becoming the tank.");
     RegConsoleCmd("sm_witch", Tank_Cmd, "Shows who is becoming the tank.");
-    RegConsoleCmd("sm_tankpool", TankPool_Cmd, "Shows who is in the pool of possible tanks.");
     
     // Cvars
     hTankPrint  = CreateConVar("tankcontrol_print_all", "0", "Who gets to see who will become the tank? (0 = Infected, 1 = Everyone)");
@@ -293,6 +291,11 @@ void PlayerTeam_Event(Event hEvent, const char[] name, bool dontBroadcast)
 
     if (client < 1 || client > MaxClients)
         return;
+
+    if (oldTeam == TEAM_INFECTED || team == TEAM_INFECTED)
+    {
+        RequestFrame(CleanTankQueue);
+    }
 
     if (oldTeam == TEAM_INFECTED)
     {
@@ -502,77 +505,6 @@ Action GiveTank_Cmd(int client, int args)
     return Plugin_Handled;
 }
 
-public Action TankPool_Cmd(int client, int args)
-{
-    if (!IsClientInGame(client))
-        return Plugin_Handled;
-    // 显示当前Tank队列
-    CPrintToChat(client, "%t", "TankPoolHeader");
-    CPrintToChat(client, "%t", "CurrentQueue");
-   
-    if (h_tankQueue.Length == 0)
-    {
-        CPrintToChat(client, "%t", "QueueEmpty");
-    }
-    else
-    {
-        char steamId[64];
-        for (int i = 0; i < h_tankQueue.Length; i++)
-        {
-            h_tankQueue.GetString(i, steamId, sizeof(steamId));
-            int tankClient = getInfectedPlayerBySteamId(steamId);
-            if (tankClient != -1)
-            {
-                CPrintToChat(client, "%d. %N", i + 1, tankClient);
-            }
-        }
-    }
-    // 显示已经当过Tank的玩家
-    CPrintToChat(client, "\n%t", "PlayedTanks");
-    if (h_whosHadTank.Length == 0)
-    {
-        CPrintToChat(client, "%t", "NoPlayedTanks");
-    }
-    else
-    {
-        char steamId[64];
-        for (int i = 0; i < h_whosHadTank.Length; i++)
-        {
-            h_whosHadTank.GetString(i, steamId, sizeof(steamId));
-            int player = getInfectedPlayerBySteamId(steamId);
-            if (player != -1)
-            {
-                CPrintToChat(client, "- %N", player);
-            }
-        }
-    }
-    // 显示可用的Tank玩家
-    ArrayList availablePlayers = new ArrayList(ByteCountToCells(64));
-    AddTeamSteamIdsToArray(availablePlayers, TEAM_INFECTED);
-    RemoveSteamIdsFromArray(availablePlayers, h_whosHadTank);
-    RemoveSteamIdsFromArray(availablePlayers, h_tankQueue);
-    CPrintToChat(client, "\n%t", "AvailableTanks");
-    if (availablePlayers.Length == 0)
-    {
-        CPrintToChat(client, "%t", "NoAvailableTanks");
-    }
-    else
-    {
-        char steamId[64];
-        for (int i = 0; i < availablePlayers.Length; i++)
-        {
-            availablePlayers.GetString(i, steamId, sizeof(steamId));
-            int player = getInfectedPlayerBySteamId(steamId);
-            if (player != -1)
-            {
-                CPrintToChat(client, "- %N", player);
-            }
-        }
-    }
-    delete availablePlayers;
-    return Plugin_Handled;
-}
-
 public Action AddTankPool_Cmd(int client, int args)
 {
     if (args < 1)
@@ -597,7 +529,6 @@ public Action AddTankPool_Cmd(int client, int args)
         return Plugin_Handled;
     }
 
-    // 如果当前没有Tank选择，直接设置为当前Tank
     if (StrEqual(queuedTankSteamId, ""))
     {
         strcopy(queuedTankSteamId, sizeof(queuedTankSteamId), steamId);
@@ -637,20 +568,17 @@ public Action RemoveTankPool_Cmd(int client, int args)
     bool wasCurrentTank = StrEqual(queuedTankSteamId, steamId);
     int queueIndex = h_tankQueue.FindString(steamId);
     
-    // 如果在队列中，移除
     if (queueIndex != -1)
     {
         h_tankQueue.Erase(queueIndex);
         CPrintToChatAll("%t", "PlayerRemovedFromQueue", target);
     }
     
-    // 如果是当前Tank，清除并重新选择
     if (wasCurrentTank)
     {
         queuedTankSteamId = "";
         tankInitiallyChosen = "";
         
-        // 重新选择Tank
         if (h_tankQueue.Length > 0)
         {
             char nextTankSteamId[64];
@@ -706,7 +634,6 @@ void chooseTank(any data)
         return;
     }
 
-    // 检查是否有手动设置的队列
     if (h_tankQueue.Length > 0)
     {
         char steamId[64];
@@ -723,7 +650,6 @@ void chooseTank(any data)
         }
     }
 
-    // 如果没有手动设置的队列或队列中的玩家无效，继续原有的随机选择逻辑
     queuedTankSteamId = "";
     tankInitiallyChosen = "";
 
@@ -1103,4 +1029,32 @@ public int Native_RemoveFromTankQueue(Handle plugin, int numParams)
     Call_StartForward(g_hForwardOnQueueChanged);
     Call_Finish();
     return true;
+}
+
+void CleanTankQueue()
+{
+    ArrayList validPlayers = new ArrayList(ByteCountToCells(64));
+    char steamId[64];
+
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsClientInGame(i) || IsFakeClient(i) || GetClientTeam(i) != TEAM_INFECTED)
+            continue;
+
+        GetClientAuthId(i, AuthId_Steam2, steamId, sizeof(steamId));
+        validPlayers.PushString(steamId);
+    }
+
+    for (int i = h_tankQueue.Length - 1; i >= 0; i--)
+    {
+        h_tankQueue.GetString(i, steamId, sizeof(steamId));
+        if (validPlayers.FindString(steamId) == -1)
+        {
+            h_tankQueue.Erase(i);
+        }
+    }
+
+    delete validPlayers;
+    
+    TriggerQueueChanged();
 }
