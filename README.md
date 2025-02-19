@@ -1,14 +1,15 @@
 ## Hana-L4D2-Plugins
 
-|                            插件名                            |                   说明                   |
-| :----------------------------------------------------------: | :--------------------------------------: |
-| [player_fakelag](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/player_fakelag) | Player Fakelag / 玩家延迟控制 / 平衡延迟 |
-| [aim_monitor](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/aim_monitor) |          Aim Monitor / 瞄准监控          |
-| [hide_server](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/hide_server) |         Hide Server / 隐藏服务器         |
-| [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
-| [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |     sourcetvsupport / 服务器录制demo     |
-| [l4d2_si_highlights](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_si_highlights) |    l4d2_si_highlights / 特感多控提示     |
-| [l4d2_MultiplayerVersus](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_MultiplayerVersus) |  l4d2_MultiplayerVersus / 对抗多v多用的  |
+|                            插件名                            |                         说明                          |
+| :----------------------------------------------------------: | :---------------------------------------------------: |
+| [player_fakelag](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/player_fakelag) |       Player Fakelag / 玩家延迟控制 / 平衡延迟        |
+| [aim_monitor](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/aim_monitor) |                Aim Monitor / 瞄准监控                 |
+| [hide_server](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/hide_server) |               Hide Server / 隐藏服务器                |
+| [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |              ff announce / 友伤[杀]提示               |
+| [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |           sourcetvsupport / 服务器录制demo            |
+| [l4d2_si_highlights](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_si_highlights) |           l4d2_si_highlights / 特感多控提示           |
+| [l4d2_MultiplayerVersus](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_MultiplayerVersus) |        l4d2_MultiplayerVersus / 对抗多v多用的         |
+| [l4d_tank_damage_announce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d_tank_damage_announce) | l4d_tank_damage_announce / 好看一点适配多人的集火播报 |
 
 ## Plugins / 插件列表
 
