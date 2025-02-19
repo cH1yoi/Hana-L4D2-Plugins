@@ -7,8 +7,8 @@
 | [hide_server](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/hide_server) |         Hide Server / 隐藏服务器         |
 | [l4dffannounce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4dffannounce) |        ff announce / 友伤[杀]提示        |
 | [sourcetvsupport](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/sourcetvsupport) |     sourcetvsupport / 服务器录制demo     |
-| [l4d2_many_pinned_prompt](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_many_pinned_prompt) |  l4d2_many_pinned_prompt / 特感多控提示  |
-| [l4d_superversus](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d_superversus) |     l4d_superversus / 对抗多v多用的      |
+| [l4d2_si_highlights](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_si_highlights) |    l4d2_si_highlights / 特感多控提示     |
+| [l4d2_MultiplayerVersus](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_MultiplayerVersus) |  l4d2_MultiplayerVersus / 对抗多v多用的  |
 
 ## Plugins / 插件列表
 
@@ -88,17 +88,17 @@ Features / 功能:
 
 * sm_recordstatus		查看sourcetv状态
 
-### 6. l4d2_many_pinned_prompt / 特感多控提示
+### 6. l4d2_si_highlights / 特感高光操作
 
 Features / 功能:
 
-* 来自特感阵营的多控操作提示
+* 提示坦克一拍N 牛一撞N Boomer一喷N 丢石头命中 打铁命中 多控提示
 
 #### Commands / 命令:
 
 * 无
 
-### 7. l4d_superversus / 多v多
+### 7. l4d2_MultiplayerVersus / 多v多
 
 Features / 功能:
 
