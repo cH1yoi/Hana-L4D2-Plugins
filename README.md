@@ -10,6 +10,7 @@
 | [l4d2_si_highlights](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_si_highlights) |           l4d2_si_highlights / 特感多控提示           |
 | [l4d2_MultiplayerVersus](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d2_MultiplayerVersus) |        l4d2_MultiplayerVersus / 对抗多v多用的         |
 | [l4d_tank_damage_announce](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/l4d_tank_damage_announce) | l4d_tank_damage_announce / 好看一点适配多人的集火播报 |
+| [tank_si_limit](https://github.com/cH1yoi/Hana-L4D2-Plugins/tree/main/tank_si_limit) |           tank_si_limit / 对抗克局特感限制            |
 
 ## Plugins / 插件列表
 
@@ -104,6 +105,16 @@ Features / 功能:
 Features / 功能:
 
 * 对抗多v多，并且支持多克生成
+
+#### Commands / 命令:
+
+* 无
+
+### 8. tank_si_limit / 对抗克局特感限制
+
+Features / 功能:
+
+* 用于对抗坦克局时候变更特感限制，坦克死球恢复，类似于zonemod里坦克局无口水。
 
 #### Commands / 命令:
 
